@@ -1,31 +1,46 @@
-"""Writes docs/img/upgrade-paths.svg: upgrade paths to Alfresco Community 26.2.
+"""Writes docs/img/upgrade-paths.svg: the upgrade paths to the current Alfresco Community release.
 
 Usage: python3 -I docs/img/make-diagram.py
+To add a release, edit TARGET and SOURCES below and run the script again.
 """
 
 from pathlib import Path
 
-W, H = 1240, 740
-FONT = "system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
-INK, MUTED, LINE = "#1F2933", "#5F6B7A", "#C3CBD5"
-BOX, BOX_EDGE = "#FFFFFF", "#9AA5B1"
-TARGET, TARGET_EDGE = "#E8F1FD", "#2F6FDE"
-SOLR, SOLR_BG = "#C2570C", "#FDEBDD"
-OS, OS_BG = "#1F5BC6", "#E3EDFC"
-
-SRC_X, SRC_W, SRC_H = 40, 300, 66
-TGT_X, TGT_Y, TGT_W, TGT_H = 880, 200, 330, 250
-MID_X, MID_W = 580, 230
-
-# version, runtime line, search line, y, target y (arrow end)
+# Data: the target release and one row per source version (newest first).
+# "via" is an intermediate stop; "tested" marks rehearsed paths (solid lines); "solr" marks a Solr reindex.
+TARGET = {
+    "version": "26.2",
+    "runtime": "Java 21 / Tomcat 11 (jakarta)",
+    "search": ["Alfresco Search Community", "OpenSearch or Elasticsearch", "Solr is no longer supported"],
+    "arrival": ["1. Seed the cursor at the first", "    transaction", "2. maxGapAge=0, maxWindow=7d", "3. Compare index count and nodes", "4. Check the dead-letter index"],
+}
 SOURCES = [
-    ("26.1.x", "Java 21 / Tomcat 11", "Solr: Search Services 2.0", 96, 250),
-    ("25.x", "Java 17 / Tomcat 10.1 (jakarta)", "Solr: Search Services 2.0", 182, 285),
-    ("23.x", "Java 17 / Tomcat 10.1 (jakarta)", "Solr: Search Services 2.0", 268, 320),
-    ("7.x  (latest patch 7.4.2)", "Java 17 / Tomcat 9 (javax)", "Solr: Search Services 2.0", 354, 355),
-    ("6.x", "Java 11 / Tomcat 8.5 (javax)", "Solr: Search Services 1.x", 440, 390),
+    {"version": "26.1.x", "runtime": "Java 21 / Tomcat 11", "search": "Search Services 2.0", "tested": True},
+    {"version": "25.x", "runtime": "Java 17 / Tomcat 10.1 (jakarta)", "search": "Search Services 2.0", "tested": True},
+    {"version": "23.x", "runtime": "Java 17 / Tomcat 10.1 (jakarta)", "search": "Search Services 2.0", "tested": True},
+    {"version": "7.x  (latest patch 7.4.2)", "runtime": "Java 17 / Tomcat 9 (javax)", "search": "Search Services 2.0", "tested": True},
+    {"version": "6.x", "runtime": "Java 11 / Tomcat 8.5 (javax)", "search": "Search Services 1.x", "tested": True},
+    {"version": "5.2", "runtime": "Java 8 / Tomcat 7", "search": "Solr 4 or Search Services 1.x", "tested": False,
+     "via": {"version": "7.4.2", "runtime": "Java 17 / Tomcat 9", "note": "Start once: schema upgrade", "solr": True}},
 ]
-OLD = ("5.2", "Java 8 / Tomcat 7", "Solr 4 or Search Services 1.x", 545)
+
+# Style
+FONT = "system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+BG, INK, MUTED = "#F7F9FB", "#1F2933", "#5F6B7A"
+BOX, EDGE, ARROW = "#FFFFFF", "#AEB8C4", "#9AA5B1"
+BLUE, BLUE_BG, BLUE_SOFT = "#1F5BC6", "#E3EDFC", "#F0F5FE"
+ORANGE, ORANGE_BG = "#C2570C", "#FDEBDD"
+
+# Layout
+W = 1240
+TOP, ROW, BOX_H = 150, 82, 62
+SRC_X, SRC_W = 40, 300
+VIA_X, VIA_W = 545, 210
+RAIL_X = 872
+TGT_X, TGT_W = 900, 300
+rows_bottom = TOP + ROW * (len(SOURCES) - 1) + BOX_H
+LEGEND_Y = rows_bottom + 52
+H = LEGEND_Y + 96
 
 
 def text(x, y, s, size=14, weight=400, color=INK, anchor="start"):
@@ -33,18 +48,22 @@ def text(x, y, s, size=14, weight=400, color=INK, anchor="start"):
             f'fill="{color}" text-anchor="{anchor}">{s}</text>')
 
 
-def box(x, y, w, h, title, line1, line2, dashed=False):
+def box(x, y, w, title, line1, line2, dashed=False):
     dash = ' stroke-dasharray="6 5"' if dashed else ""
     return "\n".join([
-        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{BOX}" stroke="{BOX_EDGE}" stroke-width="1.5"{dash} filter="url(#shadow)"/>',
-        text(x + 16, y + 24, title, 17, 700),
-        text(x + 16, y + 43, line1, 12.5, 400, MUTED),
-        text(x + 16, y + 59, line2, 12.5, 400, MUTED),
+        f'<rect x="{x}" y="{y}" width="{w}" height="{BOX_H}" rx="10" fill="{BOX}" stroke="{EDGE}" stroke-width="1.5"{dash} filter="url(#shadow)"/>',
+        text(x + 16, y + 23, title, 16.5, 700),
+        text(x + 16, y + 41, line1, 12.5, 400, MUTED),
+        text(x + 16, y + 56, line2, 12.5, 400, MUTED),
     ])
 
 
+def pill_w(label):
+    return 7.1 * len(label) + 28
+
+
 def pill(cx, cy, label, color, bg):
-    w = 7.2 * len(label) + 26
+    w = pill_w(label)
     return "\n".join([
         f'<rect x="{cx - w / 2:.1f}" y="{cy - 12}" width="{w:.1f}" height="24" rx="12" fill="{bg}" stroke="{color}" stroke-width="1.2"/>',
         f'<circle cx="{cx - w / 2 + 13:.1f}" cy="{cy}" r="4" fill="{color}"/>',
@@ -52,83 +71,88 @@ def pill(cx, cy, label, color, bg):
     ])
 
 
-def mid(x1, y1, x2, y2):
-    """Midpoint (t = 0.5) of the arrow drawn by curve()."""
-    x2 -= 8
-    mx = (x1 + x2) / 2
-    return 0.125 * x1 + 0.75 * mx + 0.125 * x2, (y1 + y2) / 2
-
-
-def curve(x1, y1, x2, y2, dashed=False, color=LINE):
+def arrow(x1, x2, y, dashed=False, label=None):
     dash = ' stroke-dasharray="7 6"' if dashed else ""
-    mx = (x1 + x2) / 2
-    return (f'<path d="M {x1} {y1} C {mx} {y1}, {mx} {y2}, {x2 - 8} {y2}" fill="none" stroke="{color}" '
-            f'stroke-width="2.2"{dash} marker-end="url(#arrow)"/>')
+    out = [f'<line x1="{x1}" y1="{y}" x2="{x2 - 9}" y2="{y}" stroke="{ARROW}" stroke-width="2.2"{dash} marker-end="url(#arrow)"/>']
+    if label:
+        out.append(text((x1 + x2) / 2, y - 9, label, 12, 500, MUTED, "middle"))
+    return "\n".join(out)
 
 
 parts = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
     "<defs>",
-    '<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">'
-    f'<path d="M 0 0 L 10 5 L 0 10 z" fill="{BOX_EDGE}"/></marker>',
+    '<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">'
+    f'<path d="M 0 0 L 10 5 L 0 10 z" fill="{ARROW}"/></marker>',
     '<filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">'
     '<feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1F2933" flood-opacity="0.12"/></filter>',
     "</defs>",
-    f'<rect width="{W}" height="{H}" fill="#F7F9FB"/>',
-    text(40, 50, "Upgrade paths to Alfresco Community 26.2", 24, 700),
-    text(40, 74, "Fewest steps from each version. Every path into 26.2 needs an initial search index.", 14, 400, MUTED),
+    f'<rect width="{W}" height="{H}" fill="{BG}"/>',
+    text(40, 56, "Upgrade Path", 28, 800),
+    text(40, 84, f"To Alfresco Community {TARGET['version']}, with the fewest steps from each version.", 15, 400, MUTED),
 ]
 
-# Arrows first, so boxes and badges sit on top.
-for _, _, _, y, ty in SOURCES:
-    parts.append(curve(SRC_X + SRC_W, y + SRC_H / 2, TGT_X, ty))
-old_y = OLD[3]
-parts.append(curve(SRC_X + SRC_W, old_y + SRC_H / 2, MID_X, old_y + SRC_H / 2, dashed=True))
-parts.append(curve(MID_X + MID_W, old_y + SRC_H / 2, TGT_X, 425, dashed=True))
+# Rows: source box, arrows, optional intermediate stop
+for i, s in enumerate(SOURCES):
+    y = TOP + i * ROW
+    cy = y + BOX_H / 2
+    dashed = not s["tested"]
+    via = s.get("via")
+    if via:
+        parts.append(arrow(SRC_X + SRC_W, VIA_X, cy, dashed))
+        parts.append(arrow(VIA_X + VIA_W, RAIL_X - 8, cy, dashed, "step 2"))
+        parts.append(box(VIA_X, y, VIA_W, via["version"], via["runtime"], via["note"], dashed=True))
+        if via.get("solr"):
+            parts.append(pill((SRC_X + SRC_W + VIA_X) / 2, cy, "Solr reindex", ORANGE, ORANGE_BG))
+    else:
+        parts.append(arrow(SRC_X + SRC_W, RAIL_X - 8, cy, dashed, "1 step"))
+    parts.append(box(SRC_X, y, SRC_W, s["version"], s["runtime"], "Search: " + s["search"], dashed=dashed))
 
-for title, l1, l2, y, _ in SOURCES:
-    parts.append(box(SRC_X, y, SRC_W, SRC_H, title, l1, l2))
-parts.append(box(SRC_X, old_y, SRC_W, SRC_H, OLD[0], OLD[1], OLD[2], dashed=True))
-parts.append(box(MID_X, old_y, MID_W, SRC_H, "7.4.2", "Java 17 / Tomcat 9", "Start once: schema upgrade", dashed=True))
+# Blue rail: every path into the target passes the initial index
+rail_top, rail_bottom = TOP - 6, rows_bottom + 6
+parts += [
+    f'<rect x="{RAIL_X - 3}" y="{rail_top}" width="6" height="{rail_bottom - rail_top}" rx="3" fill="{BLUE}"/>',
+    pill(RAIL_X - 40, TOP - 30, "OpenSearch initial index, every path", BLUE, BLUE_BG),
+]
+for i, _ in enumerate(SOURCES):
+    parts.append(f'<circle cx="{RAIL_X}" cy="{TOP + i * ROW + BOX_H / 2}" r="6" fill="{BG}" stroke="{BLUE}" stroke-width="2.5"/>')
 
 # Target box
+ty, th = TOP - 6, rows_bottom - TOP + 12
+tx = TGT_X
 parts += [
-    f'<rect x="{TGT_X}" y="{TGT_Y}" width="{TGT_W}" height="{TGT_H}" rx="14" fill="{TARGET}" stroke="{TARGET_EDGE}" stroke-width="2" filter="url(#shadow)"/>',
-    text(TGT_X + 24, TGT_Y + 44, "26.2", 34, 800, TARGET_EDGE),
-    text(TGT_X + 24, TGT_Y + 72, "Java 21 / Tomcat 11 (jakarta)", 14, 500),
-    text(TGT_X + 24, TGT_Y + 94, "Alfresco Search Community", 14, 500),
-    text(TGT_X + 24, TGT_Y + 113, "OpenSearch or Elasticsearch", 13, 400, MUTED),
-    text(TGT_X + 24, TGT_Y + 132, "Solr is no longer supported", 13, 400, MUTED),
-    f'<line x1="{TGT_X + 24}" y1="{TGT_Y + 152}" x2="{TGT_X + TGT_W - 24}" y2="{TGT_Y + 152}" stroke="{TARGET_EDGE}" stroke-opacity="0.25"/>',
-    text(TGT_X + 24, TGT_Y + 176, "On arrival:", 13, 700, OS),
-    text(TGT_X + 24, TGT_Y + 196, "seed the indexer cursor at the first", 13, 400, INK),
-    text(TGT_X + 24, TGT_Y + 214, "transaction, maxGapAge=0, maxWindow=7d", 13, 400, INK),
+    f'<rect x="{tx}" y="{ty}" width="{TGT_W}" height="{th}" rx="16" fill="#E8F1FD" stroke="{BLUE}" stroke-width="2" filter="url(#shadow)"/>',
+    text(tx + 26, ty + 62, TARGET["version"], 46, 800, BLUE),
+    text(tx + 26, ty + 96, TARGET["runtime"], 14.5, 600),
 ]
-
-# Badges on the arrows
-for _, _, _, y, ty in SOURCES:
-    parts.append(pill(*mid(SRC_X + SRC_W, y + SRC_H / 2, TGT_X, ty), "1 step, OpenSearch initial index", OS, OS_BG))
-parts.append(pill(*mid(SRC_X + SRC_W, old_y + SRC_H / 2, MID_X, old_y + SRC_H / 2), "Solr reindex", SOLR, SOLR_BG))
-parts.append(pill(*mid(MID_X + MID_W, old_y + SRC_H / 2, TGT_X, 425), "OpenSearch initial index", OS, OS_BG))
+yy = ty + 126
+for j, line in enumerate(TARGET["search"]):
+    parts.append(text(tx + 26, yy, line, 14 if j == 0 else 13, 600 if j == 0 else 400, INK if j == 0 else MUTED))
+    yy += 21
+yy += 14
+box_h = 34 + 21 * len(TARGET["arrival"])
+parts += [
+    f'<rect x="{tx + 18}" y="{yy}" width="{TGT_W - 36}" height="{box_h}" rx="10" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-opacity="0.35"/>',
+    text(tx + 34, yy + 25, "On arrival: initial search index", 13.5, 700, BLUE),
+]
+for j, line in enumerate(TARGET["arrival"]):
+    parts.append(text(tx + 34, yy + 48 + j * 21, line.replace(' ', '&#160;') if line.startswith(' ') else line, 13, 400, INK))
 
 # Legend
-def pill_left(x, cy, label, color, bg):
-    return pill(x + (7.2 * len(label) + 26) / 2, cy, label, color, bg)
-
-
-ly = 650
+ly = LEGEND_Y
 parts += [
-    f'<line x1="40" y1="{ly}" x2="90" y2="{ly}" stroke="{BOX_EDGE}" stroke-width="2.2"/>',
+    f'<line x1="40" y1="{ly}" x2="90" y2="{ly}" stroke="{ARROW}" stroke-width="2.2"/>',
     text(100, ly + 4.5, "Rehearsed on Docker", 13, 400, MUTED),
-    f'<line x1="300" y1="{ly}" x2="350" y2="{ly}" stroke="{BOX_EDGE}" stroke-width="2.2" stroke-dasharray="7 6"/>',
+    f'<line x1="300" y1="{ly}" x2="350" y2="{ly}" stroke="{ARROW}" stroke-width="2.2" stroke-dasharray="7 6"/>',
     text(360, ly + 4.5, "Documented, not rehearsed", 13, 400, MUTED),
-    pill_left(40, ly + 32, "Solr reindex", SOLR, SOLR_BG),
-    text(166, ly + 36.5, "Only if you keep Solr at the 7.4.2 stop (Solr 4 to Search Services).", 13, 400, MUTED),
-    pill_left(40, ly + 64, "OpenSearch initial index", OS, OS_BG),
-    text(253, ly + 68.5, "Required for every path into 26.2. Old content is not indexed by default.", 13, 400, MUTED),
+    pill(40 + pill_w("Solr reindex") / 2, ly + 32, "Solr reindex", ORANGE, ORANGE_BG),
+    text(40 + pill_w("Solr reindex") + 14, ly + 36.5, "Only if you keep Solr at the 7.4.2 stop (Solr 4 to Search Services).", 13, 400, MUTED),
+    f'<rect x="40" y="{ly + 55}" width="6" height="26" rx="3" fill="{BLUE}"/>',
+    text(60, ly + 72.5, f"OpenSearch initial index: required on every path into {TARGET['version']}. "
+         "The index is built again, and old content is not indexed by default.", 13, 400, MUTED),
 ]
 parts.append("</svg>")
 
 out = Path(__file__).with_name("upgrade-paths.svg")
 out.write_text("\n".join(parts) + "\n", encoding="utf-8")
-print(out)
+print(f"{out} ({W}x{H})")

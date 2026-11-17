@@ -2,7 +2,7 @@
 
 Tools to rehearse an upgrade of Alfresco Community Edition to 26.2 on Docker, with your own data or with a generated test data set, and to check add-ons (JARs and AMPs) against the target version.
 
-The upgrade path and every manual step are explained in [docs/upgrade-path-26.2.md](docs/upgrade-path-26.2.md).
+The upgrade path and every manual step are explained in [docs/upgrade-path.md](docs/upgrade-path.md).
 
 ![Upgrade paths to Alfresco Community 26.2](docs/img/upgrade-paths.svg)
 

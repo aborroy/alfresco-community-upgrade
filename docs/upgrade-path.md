@@ -1,4 +1,4 @@
-# Upgrade path to Alfresco Community 26.2
+# Upgrade Path
 
 This page explains how to upgrade an existing Alfresco Community Edition installation to 26.2 with the fewest steps. It lists every manual operation you must do on the way, including the search re-index.
 

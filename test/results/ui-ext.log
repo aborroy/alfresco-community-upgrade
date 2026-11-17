@@ -1,0 +1,408 @@
+ Network acs262_default Creating 
+ Network acs262_default Creating 
+ Network acs262_default Created 
+ Network acs262_default Created 
+ Container acs262-postgres-1 Creating 
+ Container acs262-postgres-1 Created 
+ Container acs262-postgres-1 Starting 
+ Container acs262-postgres-1 Started 
+[15:24:58] restored nodes: 903
+[15:24:58] restored s74 into 26.2
+ Image acs262-alfresco Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 686B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.2.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231
+#5 resolve docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 163B done
+#6 DONE 0.0s
+
+#7 [ 2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#7 CACHED
+
+#8 [ 5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#8 CACHED
+
+#9 [ 7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#9 CACHED
+
+#10 [ 8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#10 CACHED
+
+#11 [ 9/10] RUN if [ "" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#11 CACHED
+
+#12 [ 6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#12 CACHED
+
+#13 [ 3/10] RUN mkdir -p /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [ 4/10] COPY modules/amps /usr/local/tomcat/amps
+#14 CACHED
+
+#15 [10/10] RUN chown -R alfresco /usr/local/tomcat
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:37bae7fdf611c559bd8277dae5553b23f8e44aa6c3f5ebbae3d9b1ec35e22b2e done
+#16 exporting config sha256:59280fb950b05e5294d16de328dd0ffc99d73c651af0e06ea7219a5b6c23e831 done
+#16 exporting attestation manifest sha256:bc357edff28ee42d1478d868eb8d5be877c4b0f8cf6c256c9d3c968da8dfbbfb done
+#16 exporting manifest list sha256:337ed00bb5bd1a4ae85745e1a8f16057e8b2742d7ca09ab64f458cf1e0cb13fd done
+#16 naming to docker.io/library/acs262-alfresco:latest done
+#16 unpacking to docker.io/library/acs262-alfresco:latest done
+#16 DONE 0.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image acs262-alfresco Built 
+ Container acs262-postgres-1 Running 
+ Container acs262-activemq-1 Creating 
+ Container acs262-alfresco-1 Creating 
+ Container acs262-opensearch-1 Creating 
+ Container acs262-transform-core-aio-1 Creating 
+ Container acs262-activemq-1 Created 
+ Container acs262-opensearch-1 Created 
+ Container acs262-transform-core-aio-1 Created 
+ Container acs262-alfresco-1 Created 
+ Container acs262-batch-indexer-1 Creating 
+ Container acs262-batch-indexer-1 Created 
+ Container acs262-activemq-1 Starting 
+ Container acs262-postgres-1 Waiting 
+ Container acs262-transform-core-aio-1 Starting 
+ Container acs262-opensearch-1 Starting 
+ Container acs262-activemq-1 Started 
+ Container acs262-transform-core-aio-1 Started 
+ Container acs262-opensearch-1 Started 
+ Container acs262-opensearch-1 Waiting 
+ Container acs262-postgres-1 Healthy 
+ Container acs262-alfresco-1 Starting 
+ Container acs262-alfresco-1 Started 
+ Container acs262-alfresco-1 Waiting 
+ Container acs262-opensearch-1 Healthy 
+ Container acs262-alfresco-1 Healthy 
+ Container acs262-batch-indexer-1 Starting 
+ Container acs262-batch-indexer-1 Started 
+[15:25:19] repository ready after 5s
+PASS content app home
+PASS share login
+PASS share site dashboard
+PASS share document thumbnail
+PASS share document library
+RESULT UI smoke: 0
+ Container acs262-proxy-1 Stopping 
+ Container acs262-activemq-1 Stopping 
+ Container acs262-batch-indexer-1 Stopping 
+ Container acs262-proxy-1 Stopped 
+ Container acs262-proxy-1 Removing 
+ Container acs262-proxy-1 Removed 
+ Container acs262-content-app-1 Stopping 
+ Container acs262-share-1 Stopping 
+ Container acs262-batch-indexer-1 Stopped 
+ Container acs262-batch-indexer-1 Removing 
+ Container acs262-activemq-1 Stopped 
+ Container acs262-activemq-1 Removing 
+ Container acs262-batch-indexer-1 Removed 
+ Container acs262-transform-core-aio-1 Stopping 
+ Container acs262-opensearch-1 Stopping 
+ Container acs262-activemq-1 Removed 
+ Container acs262-content-app-1 Stopped 
+ Container acs262-content-app-1 Removing 
+ Container acs262-content-app-1 Removed 
+ Container acs262-opensearch-1 Stopped 
+ Container acs262-opensearch-1 Removing 
+ Container acs262-opensearch-1 Removed 
+ Container acs262-transform-core-aio-1 Stopped 
+ Container acs262-transform-core-aio-1 Removing 
+ Container acs262-transform-core-aio-1 Removed 
+ Container acs262-share-1 Stopped 
+ Container acs262-share-1 Removing 
+ Container acs262-share-1 Removed 
+ Container acs262-alfresco-1 Stopping 
+ Container acs262-alfresco-1 Stopped 
+ Container acs262-alfresco-1 Removing 
+ Container acs262-alfresco-1 Removed 
+ Container acs262-postgres-1 Stopping 
+ Container acs262-postgres-1 Stopped 
+ Container acs262-postgres-1 Removing 
+ Container acs262-postgres-1 Removed 
+ Network acs262_default Removing 
+ Network acs262_default Removed 
+ Network acs262_default Creating 
+ Network acs262_default Creating 
+ Network acs262_default Created 
+ Network acs262_default Created 
+ Container acs262-postgres-1 Creating 
+ Container acs262-postgres-1 Created 
+ Container acs262-postgres-1 Starting 
+ Container acs262-postgres-1 Started 
+[15:26:34] restored nodes: 903
+[15:26:35] restored s74 into 26.2
+ Image acs262-alfresco Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 686B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.2.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231
+#5 resolve docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 163B done
+#6 DONE 0.0s
+
+#7 [ 4/10] COPY modules/amps /usr/local/tomcat/amps
+#7 CACHED
+
+#8 [ 3/10] RUN mkdir -p /usr/local/tomcat/amps
+#8 CACHED
+
+#9 [ 5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#9 CACHED
+
+#10 [ 8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#10 CACHED
+
+#11 [ 9/10] RUN if [ "" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#11 CACHED
+
+#12 [ 7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#12 CACHED
+
+#13 [ 2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#13 CACHED
+
+#14 [ 6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#14 CACHED
+
+#15 [10/10] RUN chown -R alfresco /usr/local/tomcat
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:37bae7fdf611c559bd8277dae5553b23f8e44aa6c3f5ebbae3d9b1ec35e22b2e done
+#16 exporting config sha256:59280fb950b05e5294d16de328dd0ffc99d73c651af0e06ea7219a5b6c23e831 done
+#16 exporting attestation manifest sha256:b003aebe4b2c3003a4116c8c3333ad18dda82765b4bf4b101c06299016e9d79b done
+#16 exporting manifest list sha256:85a21d5a341d76890c72ac6352e073b7e53e071c82ba62d3dda33109e86a062d done
+#16 naming to docker.io/library/acs262-alfresco:latest done
+#16 unpacking to docker.io/library/acs262-alfresco:latest done
+#16 DONE 0.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image acs262-alfresco Built 
+ Container acs262-postgres-1 Running 
+ Container acs262-opensearch-1 Creating 
+ Container acs262-alfresco-1 Creating 
+ Container acs262-transform-core-aio-1 Creating 
+ Container acs262-activemq-1 Creating 
+ Container acs262-transform-core-aio-1 Created 
+ Container acs262-opensearch-1 Created 
+ Container acs262-activemq-1 Created 
+ Container acs262-alfresco-1 Created 
+ Container acs262-batch-indexer-1 Creating 
+ Container acs262-batch-indexer-1 Created 
+ Container acs262-activemq-1 Starting 
+ Container acs262-opensearch-1 Starting 
+ Container acs262-postgres-1 Waiting 
+ Container acs262-transform-core-aio-1 Starting 
+ Container acs262-activemq-1 Started 
+ Container acs262-opensearch-1 Started 
+ Container acs262-opensearch-1 Waiting 
+ Container acs262-transform-core-aio-1 Started 
+ Container acs262-postgres-1 Healthy 
+ Container acs262-alfresco-1 Starting 
+ Container acs262-alfresco-1 Started 
+ Container acs262-alfresco-1 Waiting 
+ Container acs262-opensearch-1 Healthy 
+ Container acs262-alfresco-1 Error dependency alfresco failed to start
+ Container acs262-batch-indexer-1 not started: condition "service_healthy" of service "alfresco" not met 
+dependency failed to start: container acs262-alfresco-1 is unhealthy
+ Container acs262-activemq-1 Stopping 
+ Container acs262-batch-indexer-1 Stopping 
+ Container acs262-batch-indexer-1 Stopped 
+ Container acs262-batch-indexer-1 Removing 
+ Container acs262-batch-indexer-1 Removed 
+ Container acs262-alfresco-1 Stopping 
+ Container acs262-transform-core-aio-1 Stopping 
+ Container acs262-opensearch-1 Stopping 
+ Container acs262-activemq-1 Stopped 
+ Container acs262-activemq-1 Removing 
+ Container acs262-alfresco-1 Stopped 
+ Container acs262-alfresco-1 Removing 
+ Container acs262-opensearch-1 Stopped 
+ Container acs262-opensearch-1 Removing 
+ Container acs262-activemq-1 Removed 
+ Container acs262-transform-core-aio-1 Stopped 
+ Container acs262-transform-core-aio-1 Removing 
+ Container acs262-alfresco-1 Removed 
+ Container acs262-postgres-1 Stopping 
+ Container acs262-transform-core-aio-1 Removed 
+ Container acs262-opensearch-1 Removed 
+ Container acs262-postgres-1 Stopped 
+ Container acs262-postgres-1 Removing 
+ Container acs262-postgres-1 Removed 
+ Network acs262_default Removing 
+ Network acs262_default Removed 
+RESULT extension-javax: started=no loaded=no error=NoClassDefFoundError: javax/servlet/Filter
+ Network acs262_default Creating 
+ Network acs262_default Creating 
+ Network acs262_default Created 
+ Network acs262_default Created 
+ Container acs262-postgres-1 Creating 
+ Container acs262-postgres-1 Created 
+ Container acs262-postgres-1 Starting 
+ Container acs262-postgres-1 Started 
+[15:28:48] restored nodes: 903
+[15:28:48] restored s74 into 26.2
+ Image acs262-alfresco Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 686B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.2.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231
+#5 resolve docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 163B done
+#6 DONE 0.0s
+
+#7 [ 6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#7 CACHED
+
+#8 [ 9/10] RUN if [ "" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#8 CACHED
+
+#9 [ 5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#9 CACHED
+
+#10 [ 2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#10 CACHED
+
+#11 [ 4/10] COPY modules/amps /usr/local/tomcat/amps
+#11 CACHED
+
+#12 [ 3/10] RUN mkdir -p /usr/local/tomcat/amps
+#12 CACHED
+
+#13 [ 8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#13 CACHED
+
+#14 [ 7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#14 CACHED
+
+#15 [10/10] RUN chown -R alfresco /usr/local/tomcat
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:37bae7fdf611c559bd8277dae5553b23f8e44aa6c3f5ebbae3d9b1ec35e22b2e done
+#16 exporting config sha256:59280fb950b05e5294d16de328dd0ffc99d73c651af0e06ea7219a5b6c23e831 done
+#16 exporting attestation manifest sha256:5417f489f42b86d2bc0b98a621d0178fbee7c2f868f92f7f1a1f17879500ee5c done
+#16 exporting manifest list sha256:0baad413b032147f6b901fe3b217e6a8afc119f51accf7055738ce9bdb408ae3 done
+#16 naming to docker.io/library/acs262-alfresco:latest done
+#16 unpacking to docker.io/library/acs262-alfresco:latest done
+#16 DONE 0.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image acs262-alfresco Built 
+ Container acs262-postgres-1 Running 
+ Container acs262-transform-core-aio-1 Creating 
+ Container acs262-activemq-1 Creating 
+ Container acs262-opensearch-1 Creating 
+ Container acs262-alfresco-1 Creating 
+ Container acs262-opensearch-1 Created 
+ Container acs262-transform-core-aio-1 Created 
+ Container acs262-activemq-1 Created 
+ Container acs262-alfresco-1 Created 
+ Container acs262-batch-indexer-1 Creating 
+ Container acs262-batch-indexer-1 Created 
+ Container acs262-activemq-1 Starting 
+ Container acs262-transform-core-aio-1 Starting 
+ Container acs262-postgres-1 Waiting 
+ Container acs262-opensearch-1 Starting 
+ Container acs262-activemq-1 Started 
+ Container acs262-transform-core-aio-1 Started 
+ Container acs262-opensearch-1 Started 
+ Container acs262-opensearch-1 Waiting 
+ Container acs262-postgres-1 Healthy 
+ Container acs262-alfresco-1 Starting 
+ Container acs262-alfresco-1 Started 
+ Container acs262-alfresco-1 Waiting 
+ Container acs262-opensearch-1 Healthy 
+ Container acs262-alfresco-1 Healthy 
+ Container acs262-batch-indexer-1 Starting 
+ Container acs262-batch-indexer-1 Started 
+[15:29:06] repository ready after 5s
+ Container acs262-batch-indexer-1 Stopping 
+ Container acs262-activemq-1 Stopping 
+ Container acs262-batch-indexer-1 Stopped 
+ Container acs262-batch-indexer-1 Removing 
+ Container acs262-batch-indexer-1 Removed 
+ Container acs262-opensearch-1 Stopping 
+ Container acs262-alfresco-1 Stopping 
+ Container acs262-transform-core-aio-1 Stopping 
+ Container acs262-activemq-1 Stopped 
+ Container acs262-activemq-1 Removing 
+ Container acs262-opensearch-1 Stopped 
+ Container acs262-opensearch-1 Removing 
+ Container acs262-activemq-1 Removed 
+ Container acs262-opensearch-1 Removed 
+ Container acs262-transform-core-aio-1 Stopped 
+ Container acs262-transform-core-aio-1 Removing 
+ Container acs262-transform-core-aio-1 Removed 
+ Container acs262-alfresco-1 Stopped 
+ Container acs262-alfresco-1 Removing 
+ Container acs262-alfresco-1 Removed 
+ Container acs262-postgres-1 Stopping 
+ Container acs262-postgres-1 Stopped 
+ Container acs262-postgres-1 Removing 
+ Container acs262-postgres-1 Removed 
+ Network acs262_default Removing 
+ Network acs262_default Removed 
+RESULT extension-jakarta: started=yes loaded=yes error=none

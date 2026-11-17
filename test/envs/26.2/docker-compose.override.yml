@@ -1,0 +1,10 @@
+# Test-only: publish the repository directly so the harness can call the REST API.
+services:
+    alfresco:
+        ports:
+            - "8081:8080"
+    # Docker Desktop for Mac: Lucene memory-mapped files on a bind-mounted folder crash OpenSearch
+    # ("a fault occurred in an unsafe memory access operation"). Disable mmap for the tests.
+    opensearch:
+        environment:
+            - node.store.allow_mmap=false

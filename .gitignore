@@ -1,0 +1,11 @@
+# Test data and generated artifacts
+test/envs/*/data/
+test/envs/*/logs/
+test/snapshots/
+test/*.log
+test/extension-check/build/
+test/addons/
+inventories/
+node_modules/
+
+.DS_Store

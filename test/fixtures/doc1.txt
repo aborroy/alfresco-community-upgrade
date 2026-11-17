@@ -1,0 +1,2 @@
+Alfresco upgrade test document.
+Unique token: upgradetoken42

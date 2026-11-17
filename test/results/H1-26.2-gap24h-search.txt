@@ -1,0 +1,2 @@
+FAIL search 'upgradetoken42' found no results after 60s
+PASS search 'newtokenh1262gap24h' found 1 result(s) after 10s

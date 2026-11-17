@@ -1,0 +1,1688 @@
+### embed-metadata-action-1.0.0.jar on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 6.1: 1 check(s) with findings
+### embed-metadata-action-1.0.0.jar on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 7.4: 1 check(s) with findings
+### embed-metadata-action-1.0.0.jar on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 23.4: 1 check(s) with findings
+### embed-metadata-action-1.0.0.jar on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 25.3: 1 check(s) with findings
+### embed-metadata-action-1.0.0.jar on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 26.1: 1 check(s) with findings
+### embed-metadata-action-1.0.0.jar on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 0
+No class files found.
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|1    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT embed-metadata-action-1.0.0.jar on 26.2: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|FILE_OVERWRITE         |1    |
++-----------------------+-----+
+|BEAN_OVERWRITE         |2    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |496  |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|2    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |65   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 6.1: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_OVERWRITE         |2    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |166  |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|2    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |28   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 7.4: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|BEAN_OVERWRITE            |2    |
++--------------------------+-----+
+|CLASSPATH_CONFLICT        |165  |
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |2    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |28   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|5    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 23.4: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|BEAN_OVERWRITE            |2    |
++--------------------------+-----+
+|CLASSPATH_CONFLICT        |147  |
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |2    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |28   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|5    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 25.3: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|BEAN_OVERWRITE            |2    |
++--------------------------+-----+
+|CLASSPATH_CONFLICT        |147  |
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |2    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |28   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|5    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 26.1: 1 check(s) with findings
+### esign-cert-repo-1.8.4.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 3: 29, Java 4: 314, Java 5: 1080, Java 7: 29
+Bundled JARs: 6
+  lib/slf4j-api-1.6.4.jar
+  lib/slf4j-log4j12-1.6.4.jar
+  lib/gson-2.2.4.jar
+  lib/log4j-1.2.17.jar
+  lib/itextpdf-5.5.13.jar
+  lib/esign-cert-repo-1.8.4.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|BEAN_OVERWRITE            |2    |
++--------------------------+-----+
+|CLASSPATH_CONFLICT        |147  |
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |2    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |28   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|5    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-repo-1.8.4.amp on 26.2: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 6.1: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 7.4: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 23.4: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 25.3: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 26.1: 1 check(s) with findings
+### javascript-console-repo-0.7-SNAPSHOT.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 7: 19
+Bundled JARs: 1
+  lib/javascript-console-repo-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|6    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |8    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-repo-0.7-SNAPSHOT.amp on 26.2: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |57   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 6.1: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 7.4: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 23.4: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|18   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 25.3: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|18   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 26.1: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-ACS-7.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-ACS-7.amp on 26.2: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |57   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 6.1: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 7.4: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 23.4: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|18   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 25.3: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|18   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 26.1: 1 check(s) with findings
+### pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 5: 927, Java 8: 22
+Bundled JARs: 2
+  lib/itextpdf-5.5.13.jar
+  lib/pdf-toolkit-repo-1.4.4-SNAPSHOT.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |2    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|16   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |36   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-repo-1.4.4-SNAPSHOT.amp on 26.2: 1 check(s) with findings
+### share-site-creators-repo-0.0.8.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 6.1: no issues found
+### share-site-creators-repo-0.0.8.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 7.4: no issues found
+### share-site-creators-repo-0.0.8.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 23.4: no issues found
+### share-site-creators-repo-0.0.8.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 25.3: no issues found
+### share-site-creators-repo-0.0.8.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 26.1: no issues found
+### share-site-creators-repo-0.0.8.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-repo-0.0.8.jar
+No class files found.
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-repo-0.0.8.amp on 26.2: no issues found
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 6.1: 1 check(s) with findings
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 7.4: 1 check(s) with findings
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 23.4: 1 check(s) with findings
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 25.3: 1 check(s) with findings
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 26.1: 1 check(s) with findings
+### share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/share-site-space-templates-repo-1.1.4-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT share-site-space-templates-repo-1.1.4-SNAPSHOT.amp on 26.2: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 6.1: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 7.4: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 23.4: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|2    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 25.3: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|2    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 26.1: 1 check(s) with findings
+### simple-ocr-repo-2.3.1.jar on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 7: 7
+Bundled JARs: 0
+OK needs Java 7, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT simple-ocr-repo-2.3.1.jar on 26.2: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 11
+== Inspector (repo, repo-6.1.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |38   |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 6.1: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |37   |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 7.4: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-23.4.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |1    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 23.4: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 17
+== Inspector (repo, repo-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |1    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 25.3: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |1    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 26.1: 1 check(s) with findings
+### support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 6: 462, Java 7: 156, Java 8: 564
+Bundled JARs: 6
+  lib/support-tools-repo-1.2.3.0-SNAPSHOT-classes.jar
+  lib/time4j-core-3.50.jar
+  lib/javax.el-3.0.0.jar
+  lib/cron-utils-9.1.6.jar
+  lib/time4j-i18n-3.50.jar
+  lib/javassist-3.27.0-GA.jar
+OK needs Java 8, target runs Java 21
+== Inspector (repo, repo-26.2.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|BEAN_RESTRICTED_CLASS  |1    |
++-----------------------+-----+
+|CLASSPATH_CONFLICT     |1    |
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|13   |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |22   |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-repo-1.2.3.0-SNAPSHOT-amp.amp on 26.2: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 11
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |3    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |93   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|1    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 6.1: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|3    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |4    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 7.4: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |3    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |4    |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|3    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 23.4: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |3    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |4    |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|3    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 25.3: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 21
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |3    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |4    |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|3    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 26.1: 1 check(s) with findings
+### esign-cert-share-1.8.4.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 6: 2820, Java 7: 3
+Bundled JARs: 2
+  lib/esign-cert-share-1.8.4.jar
+  web/sign/miniapplet-full_1_6_2.jar
+OK needs Java 7, target runs Java 21
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |3    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |4    |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|3    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT esign-cert-share-1.8.4.amp on 26.2: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 11
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 6.1: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 7.4: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 23.4: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 17
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 25.3: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 26.1: 1 check(s) with findings
+### javascript-console-share-0.7-SNAPSHOT.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 7: 1
+Bundled JARs: 1
+  lib/javascript-console-share-0.7-SNAPSHOT.jar
+OK needs Java 7, target runs Java 21
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++-----------------------+-----+
+|Type                   |Total|
++-----------------------+-----+
+|ALFRESCO_INTERNAL_USAGE|1    |
++-----------------------+-----+
+|WAR_LIBRARY_USAGE      |1    |
++-----------------------+-----+
+
+(use option --verbose for more details)
+== RESULT javascript-console-share-0.7-SNAPSHOT.amp on 26.2: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 6.1: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 7.4: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 23.4: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 25.3: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 26.1: 1 check(s) with findings
+### pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/pdf-toolkit-share-1.4.3-SNAPSHOT.jar
+No class files found.
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++---------------------+-----+
+|Type                 |Total|
++---------------------+-----+
+|BEAN_RESTRICTED_CLASS|2    |
++---------------------+-----+
+
+(use option --verbose for more details)
+== RESULT pdf-toolkit-share-1.4.3-SNAPSHOT.amp on 26.2: 1 check(s) with findings
+### share-site-creators-share-0.0.8.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 6.1: no issues found
+### share-site-creators-share-0.0.8.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 7.4: no issues found
+### share-site-creators-share-0.0.8.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 23.4: no issues found
+### share-site-creators-share-0.0.8.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 25.3: no issues found
+### share-site-creators-share-0.0.8.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 26.1: no issues found
+### share-site-creators-share-0.0.8.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/share-site-creators-share-0.0.8.jar
+No class files found.
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT share-site-creators-share-0.0.8.amp on 26.2: no issues found
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 11
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |26   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 6.1: 1 check(s) with findings
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 17
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |26   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 7.4: 1 check(s) with findings
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 17
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |29   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 23.4: 1 check(s) with findings
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 17
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |29   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 25.3: 1 check(s) with findings
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 21
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |29   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 26.1: 1 check(s) with findings
+### support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: Java 8: 553
+Bundled JARs: 2
+  lib/support-tools-share-1.2.3.0-SNAPSHOT-classes.jar
+  lib/commons-compress-1.21.jar
+OK needs Java 8, target runs Java 21
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, the following number of conflicts have been found:
++--------------------------+-----+
+|Type                      |Total|
++--------------------------+-----+
+|ALFRESCO_INTERNAL_USAGE   |1    |
++--------------------------+-----+
+|WAR_LIBRARY_USAGE         |29   |
++--------------------------+-----+
+|JAKARTA_MIGRATION_CONFLICT|4    |
++--------------------------+-----+
+
+(use option --verbose for more details)
+== RESULT support-tools-share-1.2.3.0-SNAPSHOT-amp.amp on 26.2: 1 check(s) with findings
+### zk-libreoffice-addon-share.amp on 6.1
+== Java (target 6.1 runs Java 11)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-6.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 6.1: no issues found
+### zk-libreoffice-addon-share.amp on 7.4
+== Java (target 7.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-7.4.2.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 7.4: no issues found
+### zk-libreoffice-addon-share.amp on 23.4
+== Java (target 23.4 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-23.4.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 23.4: no issues found
+### zk-libreoffice-addon-share.amp on 25.3
+== Java (target 25.3 runs Java 17)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-25.3.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 25.3: no issues found
+### zk-libreoffice-addon-share.amp on 26.1
+== Java (target 26.1 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-26.1.0.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 26.1: no issues found
+### zk-libreoffice-addon-share.amp on 26.2
+== Java (target 26.2 runs Java 21)
+Class files by Java release: 
+Bundled JARs: 1
+  lib/zk-libreoffice-addon-share.jar
+No class files found.
+== Inspector (share, share-26.2.1.json)
+REPORT SUMMARY
+Across the provided target versions, no conflicts have been found.
+== RESULT zk-libreoffice-addon-share.amp on 26.2: no issues found

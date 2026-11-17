@@ -1,0 +1,704 @@
+[14:17:18] restored nodes: 898
+[14:17:18] restored s61 into 7.4
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.45kB done
+#1 DONE 0.0s
+
+#2 [solr6 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.96kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-search-services:${SEARCH_TAG} results in empty or invalid base image name (line 2)
+#2 DONE 0.0s
+
+#3 [alfresco internal] load build definition from Dockerfile
+#3 transferring dockerfile: 3.47kB done
+#3 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#3 DONE 0.0s
+
+#4 [alfresco internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:7.4.2
+#4 DONE 0.0s
+
+#5 [alfresco internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [alfresco  1/10] FROM docker.io/alfresco/alfresco-content-repository-community:7.4.2@sha256:97811af54486fec8ce6a9befb258ce3984b4b2e75575951e87e65c65a349dbdf
+#6 resolve docker.io/alfresco/alfresco-content-repository-community:7.4.2@sha256:97811af54486fec8ce6a9befb258ce3984b4b2e75575951e87e65c65a349dbdf done
+#6 DONE 0.0s
+
+#7 [alfresco internal] load build context
+#7 transferring context: 171B done
+#7 DONE 0.0s
+
+#8 [alfresco  5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#8 CACHED
+
+#9 [alfresco  4/10] COPY modules/amps /usr/local/tomcat/amps
+#9 CACHED
+
+#10 [alfresco  9/10] RUN if [ "secret" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#10 CACHED
+
+#11 [alfresco  2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#11 CACHED
+
+#12 [alfresco  8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#12 CACHED
+
+#13 [alfresco  3/10] RUN mkdir -p /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [alfresco  6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#14 CACHED
+
+#15 [alfresco  7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#15 CACHED
+
+#16 [alfresco 10/10] RUN chown -R alfresco /usr/local/tomcat
+#16 CACHED
+
+#17 [auth] alfresco/alfresco-search-services:pull token for registry-1.docker.io
+#17 DONE 0.0s
+
+#18 [alfresco] exporting to image
+#18 exporting layers done
+#18 exporting manifest sha256:5c193ea892608c991683467dd8242b765b4859ca07ce6491d771faf53ba5d3db done
+#18 exporting config sha256:8a8f934c4b7e086adcd37d74ee6cdc597f447892b4b78abd7e12ad395853d432 done
+#18 exporting attestation manifest sha256:1c98f917b6332753d68b0d5569188724a84fd4e3ebfc9df6aa6dea0f8a9a3753 done
+#18 exporting manifest list sha256:3c877fb7ec8cf16547eb2278125d71231018394c9c512b4058ad3dc5779f6feb done
+#18 naming to docker.io/library/acs74-alfresco:latest done
+#18 unpacking to docker.io/library/acs74-alfresco:latest done
+#18 DONE 0.1s
+
+#19 [alfresco] resolving provenance for metadata file
+#19 DONE 0.0s
+
+#20 [solr6 internal] load metadata for docker.io/alfresco/alfresco-search-services:2.0.8
+#20 DONE 1.1s
+
+#21 [solr6 internal] load .dockerignore
+#21 transferring context: 2B done
+#21 DONE 0.0s
+
+#22 [solr6 1/6] FROM docker.io/alfresco/alfresco-search-services:2.0.8@sha256:bd2f729b3e911dc87ef41bf11ba84b78c819d7d9c70bb7093f2150c29059984f
+#22 resolve docker.io/alfresco/alfresco-search-services:2.0.8@sha256:bd2f729b3e911dc87ef41bf11ba84b78c819d7d9c70bb7093f2150c29059984f done
+#22 DONE 0.0s
+
+#23 [solr6 2/6] RUN sed -i '/^bash.*/i sed -i "'"s/alfresco.host=localhost/alfresco.host=alfresco/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&     sed -i '/^bash.*/i sed -i "'"s/solr.host=localhost/solr.host=solr6/g"'" ${DIST_DIR}/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh
+#23 CACHED
+
+#24 [solr6 3/6] RUN if [ "false" == "true" ] ; then    sed -i '/^bash.*/i sed -i "'"/alfresco.index.transformContent/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&    sed -i '/^bash.*/i sed -i "'"/alfresco.ignore.datatype.1/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#24 CACHED
+
+#25 [solr6 4/6] RUN if [ "true" == "true" ] ; then     sed -i '/^bash.*/i sed -i "'"/alfresco.cross.locale.datatype/s/^#//g"'" $DIST_DIR/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#25 CACHED
+
+#26 [solr6 5/6] RUN if [ "secret" == "https" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=none/alfresco.secureComms=https/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; elif [ "secret" == "secret" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=secret/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; else     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=none/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#26 CACHED
+
+#27 [solr6 6/6] RUN if [ "secret" == "https" ] ; then   sed -i '/^bash.*/i   sed -i "'"s/alfresco.encryption.ssl.keystore.location=.*/alfresco.encryption.ssl.keystore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.keystore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.passwordFileLocation=.*/alfresco.encryption.ssl.keystore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.type=.*/alfresco.encryption.ssl.keystore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.location=.*/alfresco.encryption.ssl.truststore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.truststore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.passwordFileLocation=.*/alfresco.encryption.ssl.truststore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.type=.*/alfresco.encryption.ssl.truststore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties'   /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#27 CACHED
+
+#28 [solr6] exporting to image
+#28 exporting layers done
+#28 exporting manifest sha256:e5611e29bc3c7a43f0ce213cc29ea67f84068b83005948abca2a39f1adf1ebb7 done
+#28 exporting config sha256:bef66967f013451c4477bea69ef72738bfa332950f3f0e0effa458af71744e40 done
+#28 exporting attestation manifest sha256:8c0a2a438d63d58fa06bdb808f9a991b9b4c36f0b4dceac2470800bba2e9bd74 done
+#28 exporting manifest list sha256:9d20ded59b7191b6837f1a63e3e3a6f51a8a3780330c74938dce2a1faea6280b done
+#28 naming to docker.io/library/acs74-solr6:latest done
+#28 unpacking to docker.io/library/acs74-solr6:latest done
+#28 DONE 0.1s
+
+#29 [solr6] resolving provenance for metadata file
+#29 DONE 0.0s
+[14:17:41] repository ready after 10s
+version: 7.4.2.0 (re4c61c7a-blocal) schema 18200 schema=18200
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF
+PASS search 'upgradetoken42' found 1 result(s) after 30s
+PASS search 'newtokena74' found 1 result(s) after 10s
+[14:18:31] snapshot s74: 7.4.2.0 (re4c61c7a-blocal) schema 18200,  20M
+RESULT A-7.4: verify=PASS reindex=PASS search=PASS
+[14:18:41] restored nodes: 903
+[14:18:41] restored s74 into 23.4
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.46kB done
+#1 DONE 0.0s
+
+#2 [alfresco internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#2 DONE 0.0s
+
+#3 [solr6 internal] load build definition from Dockerfile
+#3 transferring dockerfile: 3.96kB done
+#3 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-search-services:${SEARCH_TAG} results in empty or invalid base image name (line 2)
+#3 DONE 0.0s
+
+#4 [alfresco internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:23.4.1
+#4 DONE 0.0s
+
+#5 [alfresco internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [alfresco  1/10] FROM docker.io/alfresco/alfresco-content-repository-community:23.4.1@sha256:9b8d99bf4d6d738fe4adaed89f8babc5e38c3f0e60314ba2c858aadf4b37a447
+#6 resolve docker.io/alfresco/alfresco-content-repository-community:23.4.1@sha256:9b8d99bf4d6d738fe4adaed89f8babc5e38c3f0e60314ba2c858aadf4b37a447 done
+#6 DONE 0.0s
+
+#7 [alfresco internal] load build context
+#7 transferring context: 171B done
+#7 DONE 0.0s
+
+#8 [alfresco  4/10] COPY modules/amps /usr/local/tomcat/amps
+#8 CACHED
+
+#9 [alfresco  2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#9 CACHED
+
+#10 [alfresco  9/10] RUN if [ "secret" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#10 CACHED
+
+#11 [alfresco  5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#11 CACHED
+
+#12 [alfresco  6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#12 CACHED
+
+#13 [alfresco  3/10] RUN mkdir -p /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [alfresco  7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#14 CACHED
+
+#15 [alfresco  8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#15 CACHED
+
+#16 [alfresco 10/10] RUN chown -R alfresco /usr/local/tomcat
+#16 CACHED
+
+#17 [alfresco] exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:9db92d1cd2106b9b12b502b0c4051a29c40f0cef9e5d73175b2494b5f5abbede done
+#17 exporting config sha256:31f36ce9f331e6522570599ab78b0d316a4ab284f10d47cb642c77f2e0cc3318 done
+#17 exporting attestation manifest sha256:d5b003c05be6f6085535f367121dc14694533bb67dba12d80222905dd85e8585 0.0s done
+#17 exporting manifest list sha256:75247ead304655e745fec531915cff6664474b225470cad70fa212298ef61f2c
+#17 exporting manifest list sha256:75247ead304655e745fec531915cff6664474b225470cad70fa212298ef61f2c done
+#17 naming to docker.io/library/acs234-alfresco:latest done
+#17 unpacking to docker.io/library/acs234-alfresco:latest done
+#17 DONE 0.1s
+
+#18 [alfresco] resolving provenance for metadata file
+#18 DONE 0.0s
+
+#19 [solr6 internal] load metadata for docker.io/alfresco/alfresco-search-services:2.0.14
+#19 DONE 0.5s
+
+#20 [solr6 internal] load .dockerignore
+#20 transferring context: 2B done
+#20 DONE 0.0s
+
+#21 [solr6 1/6] FROM docker.io/alfresco/alfresco-search-services:2.0.14@sha256:6391106211b9d96ede27873fb15310f9dd0fb34af4d5db7be73f26754d2a67b5
+#21 resolve docker.io/alfresco/alfresco-search-services:2.0.14@sha256:6391106211b9d96ede27873fb15310f9dd0fb34af4d5db7be73f26754d2a67b5 0.0s done
+#21 DONE 0.0s
+
+#22 [solr6 4/6] RUN if [ "true" == "true" ] ; then     sed -i '/^bash.*/i sed -i "'"/alfresco.cross.locale.datatype/s/^#//g"'" $DIST_DIR/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#22 CACHED
+
+#23 [solr6 2/6] RUN sed -i '/^bash.*/i sed -i "'"s/alfresco.host=localhost/alfresco.host=alfresco/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&     sed -i '/^bash.*/i sed -i "'"s/solr.host=localhost/solr.host=solr6/g"'" ${DIST_DIR}/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh
+#23 CACHED
+
+#24 [solr6 3/6] RUN if [ "false" == "true" ] ; then    sed -i '/^bash.*/i sed -i "'"/alfresco.index.transformContent/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&    sed -i '/^bash.*/i sed -i "'"/alfresco.ignore.datatype.1/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#24 CACHED
+
+#25 [solr6 5/6] RUN if [ "secret" == "https" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=none/alfresco.secureComms=https/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; elif [ "secret" == "secret" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=secret/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; else     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=none/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#25 CACHED
+
+#26 [solr6 6/6] RUN if [ "secret" == "https" ] ; then   sed -i '/^bash.*/i   sed -i "'"s/alfresco.encryption.ssl.keystore.location=.*/alfresco.encryption.ssl.keystore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.keystore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.passwordFileLocation=.*/alfresco.encryption.ssl.keystore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.type=.*/alfresco.encryption.ssl.keystore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.location=.*/alfresco.encryption.ssl.truststore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.truststore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.passwordFileLocation=.*/alfresco.encryption.ssl.truststore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.type=.*/alfresco.encryption.ssl.truststore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties'   /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#26 CACHED
+
+#27 [solr6] exporting to image
+#27 exporting layers done
+#27 exporting manifest sha256:9c13aa04548d23b45e394ba7e3edfc5fc9f1ac07af58397ccf5af7a844d533e5 done
+#27 exporting config sha256:f82e52cb9bba96c953ea20d154b76d5f7331bc30e1126fdf885655ead3631cf2 done
+#27 exporting attestation manifest sha256:f594ea010d4571fea4dafb9de817e5a0cd5bd5b8284b9834207b0d26dc9f2680 done
+#27 exporting manifest list sha256:d6a513607a45dcd0167a2597e3c53dd461170503842b6c582eaa966c9ee1700c done
+#27 naming to docker.io/library/acs234-solr6:latest done
+#27 unpacking to docker.io/library/acs234-solr6:latest done
+#27 DONE 0.1s
+
+#28 [solr6] resolving provenance for metadata file
+#28 DONE 0.0s
+[14:19:03] repository ready after 5s
+version: 23.4.1.0 (r9e14db2e-blocal) schema 19300 schema=19300
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF
+PASS search 'upgradetoken42' found 1 result(s) after 40s
+PASS search 'newtokenc234' found 1 result(s) after 20s
+[14:19:56] snapshot s234: 23.4.1.0 (r9e14db2e-blocal) schema 19300,  20M
+RESULT C-23.4: verify=PASS reindex=PASS search=PASS
+[14:20:09] restored nodes: 903
+[14:20:09] restored s74 into 25.3
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.46kB done
+#1 DONE 0.0s
+
+#2 [solr6 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.96kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-search-services:${SEARCH_TAG} results in empty or invalid base image name (line 2)
+#2 DONE 0.0s
+
+#3 [alfresco internal] load build definition from Dockerfile
+#3 transferring dockerfile: 3.47kB 0.0s done
+#3 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#3 DONE 0.0s
+
+#4 [alfresco internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:25.3.0
+#4 DONE 0.0s
+
+#5 [alfresco internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [alfresco  1/10] FROM docker.io/alfresco/alfresco-content-repository-community:25.3.0@sha256:f0054141dbcfb15debe26111f6bb9c459b868c6f6e69a93826b888bd0e308bab
+#6 resolve docker.io/alfresco/alfresco-content-repository-community:25.3.0@sha256:f0054141dbcfb15debe26111f6bb9c459b868c6f6e69a93826b888bd0e308bab done
+#6 DONE 0.0s
+
+#7 [alfresco internal] load build context
+#7 transferring context: 171B done
+#7 DONE 0.0s
+
+#8 [alfresco  3/10] RUN mkdir -p /usr/local/tomcat/amps
+#8 CACHED
+
+#9 [alfresco  8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#9 CACHED
+
+#10 [alfresco  2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#10 CACHED
+
+#11 [alfresco  4/10] COPY modules/amps /usr/local/tomcat/amps
+#11 CACHED
+
+#12 [alfresco  5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#12 CACHED
+
+#13 [alfresco  6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#13 CACHED
+
+#14 [alfresco  9/10] RUN if [ "secret" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#14 CACHED
+
+#15 [alfresco  7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#15 CACHED
+
+#16 [alfresco 10/10] RUN chown -R alfresco /usr/local/tomcat
+#16 CACHED
+
+#17 [alfresco] exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:1f2ec567c648b902974193d680a7ba58a27906061db67b6e0c8974ce52fc5c7d done
+#17 exporting config sha256:a020ef372f22f1f15e878f5b87c80cc2521397edcd28fb5fbffbaab8cb6a27d0 done
+#17 exporting attestation manifest sha256:18703000078ec90f3292e3588987e1f97f8ec4ec86710ff5db3cde4ba5755f87 done
+#17 exporting manifest list sha256:3f37dad070df0a7315911da0563e629d099fb7e931eb9ff8c723a352dfe9fe00
+#17 exporting manifest list sha256:3f37dad070df0a7315911da0563e629d099fb7e931eb9ff8c723a352dfe9fe00 done
+#17 naming to docker.io/library/acs253-alfresco:latest done
+#17 unpacking to docker.io/library/acs253-alfresco:latest done
+#17 DONE 0.1s
+
+#18 [alfresco] resolving provenance for metadata file
+#18 DONE 0.0s
+
+#19 [solr6 internal] load metadata for docker.io/alfresco/alfresco-search-services:2.0.17
+#19 DONE 0.8s
+
+#20 [solr6 internal] load .dockerignore
+#20 transferring context: 2B done
+#20 DONE 0.0s
+
+#21 [solr6 1/6] FROM docker.io/alfresco/alfresco-search-services:2.0.17@sha256:2b00d19e09e57bd95622740942aa66a01872742fc97c71e85538abf593cb8889
+#21 resolve docker.io/alfresco/alfresco-search-services:2.0.17@sha256:2b00d19e09e57bd95622740942aa66a01872742fc97c71e85538abf593cb8889 done
+#21 DONE 0.0s
+
+#22 [solr6 2/6] RUN sed -i '/^bash.*/i sed -i "'"s/alfresco.host=localhost/alfresco.host=alfresco/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&     sed -i '/^bash.*/i sed -i "'"s/solr.host=localhost/solr.host=solr6/g"'" ${DIST_DIR}/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh
+#22 CACHED
+
+#23 [solr6 3/6] RUN if [ "false" == "true" ] ; then    sed -i '/^bash.*/i sed -i "'"/alfresco.index.transformContent/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&    sed -i '/^bash.*/i sed -i "'"/alfresco.ignore.datatype.1/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#23 CACHED
+
+#24 [solr6 4/6] RUN if [ "true" == "true" ] ; then     sed -i '/^bash.*/i sed -i "'"/alfresco.cross.locale.datatype/s/^#//g"'" $DIST_DIR/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#24 CACHED
+
+#25 [solr6 5/6] RUN if [ "secret" == "https" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=none/alfresco.secureComms=https/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; elif [ "secret" == "secret" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=secret/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; else     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=none/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#25 CACHED
+
+#26 [solr6 6/6] RUN if [ "secret" == "https" ] ; then   sed -i '/^bash.*/i   sed -i "'"s/alfresco.encryption.ssl.keystore.location=.*/alfresco.encryption.ssl.keystore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.keystore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.passwordFileLocation=.*/alfresco.encryption.ssl.keystore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.type=.*/alfresco.encryption.ssl.keystore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.location=.*/alfresco.encryption.ssl.truststore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.truststore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.passwordFileLocation=.*/alfresco.encryption.ssl.truststore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.type=.*/alfresco.encryption.ssl.truststore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties'   /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#26 CACHED
+
+#27 [solr6] exporting to image
+#27 exporting layers done
+#27 exporting manifest sha256:992ae3b51888e7aaadd79fa0b0e24d11ddbd9c2973bc1d7f0b49a1ffe597c59c done
+#27 exporting config sha256:a8003c8f7deeee5be406ef02322a6dcdc678af651b577cada36a9d66da7dbce8 done
+#27 exporting attestation manifest sha256:c3e23bfc42a00e590721ff1bd213b68214fd5d4725f34afeeeca7bb6c08a5b4d done
+#27 exporting manifest list sha256:45f13e8f60e180638dbf2344859c8d5a90ca2d5ada9c3088259ecf72a01b036b done
+#27 naming to docker.io/library/acs253-solr6:latest done
+#27 unpacking to docker.io/library/acs253-solr6:latest done
+#27 DONE 0.0s
+
+#28 [solr6] resolving provenance for metadata file
+#28 DONE 0.0s
+[14:20:36] repository ready after 5s
+version: 25.3.0.0 (r6ad76f59-blocal) schema 20200 schema=20200
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF
+PASS search 'upgradetoken42' found 1 result(s) after 10s
+PASS search 'newtokene253' found 1 result(s) after 20s
+[14:21:24] snapshot s253: 25.3.0.0 (r6ad76f59-blocal) schema 20200,  20M
+RESULT E-25.3: verify=PASS reindex=PASS search=PASS
+[14:21:34] restored nodes: 903
+[14:21:34] restored s74 into 26.1
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.46kB done
+#1 DONE 0.0s
+
+#2 [solr6 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.96kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-search-services:${SEARCH_TAG} results in empty or invalid base image name (line 2)
+#2 DONE 0.0s
+
+#3 [alfresco internal] load build definition from Dockerfile
+#3 transferring dockerfile: 3.47kB done
+#3 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#3 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#3 DONE 0.0s
+
+#4 [alfresco internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.1.0
+#4 DONE 0.0s
+
+#5 [alfresco internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [alfresco  1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.1.0@sha256:1deedf2bf62dad778d4023acd2f82406f6648322623a281c85e901e6687d7909
+#6 resolve docker.io/alfresco/alfresco-content-repository-community:26.1.0@sha256:1deedf2bf62dad778d4023acd2f82406f6648322623a281c85e901e6687d7909 done
+#6 DONE 0.0s
+
+#7 [alfresco internal] load build context
+#7 transferring context: 171B done
+#7 DONE 0.0s
+
+#8 [alfresco  9/10] RUN if [ "secret" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#8 CACHED
+
+#9 [alfresco  7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#9 CACHED
+
+#10 [alfresco  6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#10 CACHED
+
+#11 [alfresco  5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#11 CACHED
+
+#12 [alfresco  8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#12 CACHED
+
+#13 [alfresco  3/10] RUN mkdir -p /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [alfresco  2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#14 CACHED
+
+#15 [alfresco  4/10] COPY modules/amps /usr/local/tomcat/amps
+#15 CACHED
+
+#16 [alfresco 10/10] RUN chown -R alfresco /usr/local/tomcat
+#16 CACHED
+
+#17 [alfresco] exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:ff40b3431de4f06e58f7e46a8b31dfa55677330aef0d2498edddf942b73dfb6f done
+#17 exporting config sha256:aeba68fade723c0c1b3cea16c93576ba2a0faf21f4be27d4bf638d2698f6c924 done
+#17 exporting attestation manifest sha256:c2e7984c1916061cbee387c32d040190674ee652b54dfcd5ed3890ecebf19683 done
+#17 exporting manifest list sha256:3645a6aafe55e1d0e3b91b0a0919e40b2b9a0a49238a37c77e74ea6d5e98d474 done
+#17 naming to docker.io/library/acs261-alfresco:latest done
+#17 unpacking to docker.io/library/acs261-alfresco:latest done
+#17 DONE 0.1s
+
+#18 [solr6 internal] load metadata for docker.io/alfresco/alfresco-search-services:2.0.18
+#18 ...
+
+#19 [alfresco] resolving provenance for metadata file
+#19 DONE 0.0s
+
+#18 [solr6 internal] load metadata for docker.io/alfresco/alfresco-search-services:2.0.18
+#18 DONE 0.5s
+
+#20 [solr6 internal] load .dockerignore
+#20 transferring context: 2B done
+#20 DONE 0.0s
+
+#21 [solr6 1/6] FROM docker.io/alfresco/alfresco-search-services:2.0.18@sha256:94a04d082bb20991352ba9c3ab5b9f60b521fd95826e44cbb49c1d9da5a228c3
+#21 resolve docker.io/alfresco/alfresco-search-services:2.0.18@sha256:94a04d082bb20991352ba9c3ab5b9f60b521fd95826e44cbb49c1d9da5a228c3 0.0s done
+#21 DONE 0.0s
+
+#22 [solr6 2/6] RUN sed -i '/^bash.*/i sed -i "'"s/alfresco.host=localhost/alfresco.host=alfresco/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&     sed -i '/^bash.*/i sed -i "'"s/solr.host=localhost/solr.host=solr6/g"'" ${DIST_DIR}/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh
+#22 CACHED
+
+#23 [solr6 3/6] RUN if [ "false" == "true" ] ; then    sed -i '/^bash.*/i sed -i "'"/alfresco.index.transformContent/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh &&    sed -i '/^bash.*/i sed -i "'"/alfresco.ignore.datatype.1/s/^#//g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'    /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#23 CACHED
+
+#24 [solr6 4/6] RUN if [ "true" == "true" ] ; then     sed -i '/^bash.*/i sed -i "'"/alfresco.cross.locale.datatype/s/^#//g"'" $DIST_DIR/solrhome/conf/shared.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#24 CACHED
+
+#25 [solr6 5/6] RUN if [ "secret" == "https" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=none/alfresco.secureComms=https/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; elif [ "secret" == "secret" ] ; then     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=secret/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; else     sed -i '/^bash.*/i sed -i "'"s/alfresco.secureComms=https/alfresco.secureComms=none/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties\n'     /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#25 CACHED
+
+#26 [solr6 6/6] RUN if [ "secret" == "https" ] ; then   sed -i '/^bash.*/i   sed -i "'"s/alfresco.encryption.ssl.keystore.location=.*/alfresco.encryption.ssl.keystore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.keystore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.passwordFileLocation=.*/alfresco.encryption.ssl.keystore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.keystore.type=.*/alfresco.encryption.ssl.keystore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.location=.*/alfresco.encryption.ssl.truststore.location=\\\/opt\\\/alfresco-search-services\\\/keystore\\\/ssl-repo-client.truststore/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.passwordFileLocation=.*/alfresco.encryption.ssl.truststore.passwordFileLocation=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties &&   sed -i "'"s/alfresco.encryption.ssl.truststore.type=.*/alfresco.encryption.ssl.truststore.type=/g"'" ${DIST_DIR}/solrhome/templates/rerank/conf/solrcore.properties'   /opt/alfresco-search-services/solr/bin/search_config_setup.sh; fi
+#26 CACHED
+
+#27 [solr6] exporting to image
+#27 exporting layers done
+#27 exporting manifest sha256:5bd930d0ca9a853bbf417578fd6c4376dc6589876fe76d45f3294e1ad41dcbd8 done
+#27 exporting config sha256:752cba289e7db9ab652beccaa9d07c20376c649e2b0e40ef6f42a8bd0248033c done
+#27 exporting attestation manifest sha256:3667a247f6cbccacd4db9fafec848696ba36765a3068d18fb85c766997f7ea6f done
+#27 exporting manifest list sha256:384008367f79d26beed71beba4ee5aad0f80b7453b3798377b480d1d6d968d74 done
+#27 naming to docker.io/library/acs261-solr6:latest done
+#27 unpacking to docker.io/library/acs261-solr6:latest done
+#27 DONE 0.1s
+
+#28 [solr6] resolving provenance for metadata file
+#28 DONE 0.0s
+[14:21:53] repository ready after 5s
+version: 26.1.0.0 (rc59bbfd0-blocal) schema 21000 schema=21000
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF
+PASS search 'upgradetoken42' found 1 result(s) after 50s
+PASS search 'newtokenf261' found 1 result(s) after 10s
+[14:22:50] snapshot s261: 26.1.0.0 (rc59bbfd0-blocal) schema 21000,  20M
+RESULT F-26.1: verify=PASS reindex=PASS search=PASS
+[14:23:01] restored nodes: 898
+[14:23:01] restored s61 into 26.2
+#1 [internal] load local bake definitions
+#1 reading from stdin 686B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.2.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231
+#6 resolve docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231 done
+#6 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 171B done
+#5 DONE 0.0s
+
+#7 [ 8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#7 CACHED
+
+#8 [ 2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#8 CACHED
+
+#9 [ 5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#9 CACHED
+
+#10 [ 6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#10 CACHED
+
+#11 [ 9/10] RUN if [ "" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#11 CACHED
+
+#12 [ 3/10] RUN mkdir -p /usr/local/tomcat/amps
+#12 CACHED
+
+#13 [ 4/10] COPY modules/amps /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [ 7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#14 CACHED
+
+#15 [10/10] RUN chown -R alfresco /usr/local/tomcat
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:37bae7fdf611c559bd8277dae5553b23f8e44aa6c3f5ebbae3d9b1ec35e22b2e done
+#16 exporting config sha256:59280fb950b05e5294d16de328dd0ffc99d73c651af0e06ea7219a5b6c23e831 done
+#16 exporting attestation manifest sha256:686911eb07654b30c3c772623b5d7b5b073962e26d7c2f71a39b5b0318b5d969 done
+#16 exporting manifest list sha256:d7c78e7246503cbd18e2adcbfe861a6412931cbdcbd963c72630692711191ba1 done
+#16 naming to docker.io/library/acs262-alfresco:latest done
+#16 unpacking to docker.io/library/acs262-alfresco:latest done
+#16 DONE 0.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+[14:23:22] repository ready after 5s
+version: 26.2.0.0 (rec48a987-blocal) schema 21100 schema=21100
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF
+FAIL search 'upgradetoken42' found no results after 600s
+FAIL search 'newtokend61to262' found no results after 600s
+RESULT D-6.1-to-26.2: verify=PASS reindex=FAIL search=FAIL
+[14:49:39] restored nodes: 903
+[14:49:39] restored s74 into 26.2
+#1 [internal] load local bake definitions
+#1 reading from stdin 686B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.47kB done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG alfresco/alfresco-content-repository-community:${ALFRESCO_TAG} results in empty or invalid base image name (line 2)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+#2 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 51)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/alfresco/alfresco-content-repository-community:26.2.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231
+#5 resolve docker.io/alfresco/alfresco-content-repository-community:26.2.0@sha256:f83564035b693718584fcad057079e7725e85990b936afd9f9a696de1c047231 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 163B done
+#6 DONE 0.0s
+
+#7 [ 6/10] RUN java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt*.jar install     /usr/local/tomcat/amps /usr/local/tomcat/webapps/alfresco -directory -nobackup -force
+#7 CACHED
+
+#8 [ 9/10] RUN if [ "" == "https" ] ; then       sed -i "s/[[:space:]]\+<\/Engine>/\n        <\/Engine>\n        <Connector port=\"8443\" protocol=\"org.apache.coyote.http11.Http11NioProtocol\"\n            connectionTimeout=\"20000\" maxThreads=\"150\"\n            SSLEnabled=\"true\" scheme=\"https\" secure=\"true\"\n            defaultSSLHostConfigName=\"localhost\">\n                <SSLHostConfig hostName=\"localhost\" protocols=\"TLSv1.3\"\n                    certificateVerification=\"required\"\n                    truststoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.truststore\"\n                    truststorePassword=\"\" truststoreType=\"\">\n                    <Certificate certificateKeystoreFile=\"\/usr\/local\/tomcat\/keystore\/ssl.keystore\"\n                       certificateKeyAlias=\"\" type=\"RSA\"\n                       certificateKeystorePassword=\"\" certificateKeystoreType=\"\"\/>\n                <\/SSLHostConfig>\n        <\/Connector>/g" /usr/local/tomcat/conf/server.xml;     fi
+#8 CACHED
+
+#9 [ 5/10] COPY modules/jars /usr/local/tomcat/webapps/alfresco/WEB-INF/lib
+#9 CACHED
+
+#10 [ 7/10] RUN ls -la /etc/yum.repos.d/ &&     ((sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* 2>/dev/null) ||     (sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/rocky-* &&     sed -i 's|#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://dl.rockylinux.org/$contentdir|g' /etc/yum.repos.d/rocky-*)) ||     (dnf clean all && dnf makecache && dnf update -y)
+#10 CACHED
+
+#11 [ 4/10] COPY modules/amps /usr/local/tomcat/amps
+#11 CACHED
+
+#12 [ 2/10] RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || true &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* || true
+#12 CACHED
+
+#13 [ 3/10] RUN mkdir -p /usr/local/tomcat/amps
+#13 CACHED
+
+#14 [ 8/10] RUN if [ "postgres" == "mariadb" ] ; then     set -x         && yum clean all         && yum install -y wget         && yum clean all         && wget -P /tmp/ https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar         && cp /tmp/mariadb-java-client-2.7.4.jar /usr/local/tomcat/lib/         && rm -rf /tmp/mariadb-java-client-2.7.4.jar; fi
+#14 CACHED
+
+#15 [10/10] RUN chown -R alfresco /usr/local/tomcat
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:37bae7fdf611c559bd8277dae5553b23f8e44aa6c3f5ebbae3d9b1ec35e22b2e 0.0s done
+#16 exporting config sha256:59280fb950b05e5294d16de328dd0ffc99d73c651af0e06ea7219a5b6c23e831 done
+#16 exporting attestation manifest sha256:b8e8ac1c9319c8c128b91db6d520bc51efc06a623545e91d0e4e545ecd8411a9 done
+#16 exporting manifest list sha256:3e2a1b6d7d46f19a1f3371e08d66b302b14d0173b84e4605f7dcd3b448fe874c done
+#16 naming to docker.io/library/acs262-alfresco:latest done
+#16 unpacking to docker.io/library/acs262-alfresco:latest done
+#16 DONE 0.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+[14:50:00] repository ready after 5s
+version: 26.2.0.0 (rec48a987-blocal) schema 21100 schema=21100
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF

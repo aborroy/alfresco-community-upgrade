@@ -1,0 +1,15 @@
+version: 25.3.0.0 (r6ad76f59-blocal) schema 20200 schema=20200
+PASS site exists
+PASS user exists
+PASS user can log in
+PASS doc1 content (latest version)
+PASS doc1 version count
+PASS doc1 version 1.0 content
+PASS doc1 comment
+PASS doc1 tag
+PASS binary content
+PASS binary title
+PASS upload after upgrade
+PASS pdf rendition requested
+PASS pdf rendition created
+PASS pdf rendition is a PDF

@@ -1,0 +1,8 @@
+Matrix run 2026-11-17T14:12:50Z
+RESULT D-6.1-to-26.2: verify=PASS reindex=PASS search=PASS
+RESULT B-7.4-to-26.2: verify=PASS reindex=PASS search=PASS
+RESULT C-23.4-to-26.2: verify=PASS reindex=PASS search=PASS
+RESULT E-25.3-to-26.2: verify=PASS reindex=PASS search=PASS (rerun; first run: cursor write failed once)
+RESULT F-26.1-to-26.2: verify=PASS reindex=PASS search=PASS
+RESULT H1-aged-default-gap: verify=PASS reindex=FAIL search=FAIL
+RESULT H2-aged-procedure: verify=PASS reindex=PASS search=PASS

@@ -1,0 +1,2 @@
+PASS search 'upgradetoken42' found 3 result(s) after 10s
+PASS search 'newtokenh2262aged' found 1 result(s) after 10s

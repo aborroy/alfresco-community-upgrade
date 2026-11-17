@@ -1,0 +1,7 @@
+Matrix run 2026-11-17T13:10:44Z
+RESULT 6.1 baseline: PASS
+RESULT A-7.4: verify=PASS reindex=PASS search=PASS
+RESULT C-23.4: verify=PASS reindex=PASS search=PASS
+RESULT E-25.3: verify=PASS reindex=PASS search=PASS
+RESULT F-26.1: verify=PASS reindex=PASS search=PASS
+RESULT D-6.1-to-26.2: verify=PASS reindex=FAIL search=FAIL

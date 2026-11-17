@@ -6,6 +6,8 @@ Every path marked as rehearsed was tested with a real repository: data created o
 
 ## Upgrade path
 
+![Upgrade paths to Alfresco Community 26.2](img/upgrade-paths.svg)
+
 | Current version | Path to 26.2 | Steps | Rehearsed |
 | --- | --- | --- | --- |
 | 26.1.x | 26.1 -> 26.2 | 1 | Yes (26.1.0) |

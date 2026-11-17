@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="740" viewBox="0 0 1240 740">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9AA5B1"/></marker>
+<filter id="shadow" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1F2933" flood-opacity="0.12"/></filter>
+</defs>
+<rect width="1240" height="740" fill="#F7F9FB"/>
+<text x="40" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#1F2933" text-anchor="start">Upgrade paths to Alfresco Community 26.2</text>
+<text x="40" y="74" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#5F6B7A" text-anchor="start">Fewest steps from each version. Every path into 26.2 needs an initial search index.</text>
+<path d="M 340 129.0 C 610.0 129.0, 610.0 250, 872 250" fill="none" stroke="#C3CBD5" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 340 215.0 C 610.0 215.0, 610.0 285, 872 285" fill="none" stroke="#C3CBD5" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 340 301.0 C 610.0 301.0, 610.0 320, 872 320" fill="none" stroke="#C3CBD5" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 340 387.0 C 610.0 387.0, 610.0 355, 872 355" fill="none" stroke="#C3CBD5" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 340 473.0 C 610.0 473.0, 610.0 390, 872 390" fill="none" stroke="#C3CBD5" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 340 578.0 C 460.0 578.0, 460.0 578.0, 572 578.0" fill="none" stroke="#C3CBD5" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<path d="M 810 578.0 C 845.0 578.0, 845.0 425, 872 425" fill="none" stroke="#C3CBD5" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<rect x="40" y="96" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="56" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">26.1.x</text>
+<text x="56" y="139" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 21 / Tomcat 11</text>
+<text x="56" y="155" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr: Search Services 2.0</text>
+<rect x="40" y="182" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="56" y="206" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">25.x</text>
+<text x="56" y="225" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 17 / Tomcat 10.1 (jakarta)</text>
+<text x="56" y="241" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr: Search Services 2.0</text>
+<rect x="40" y="268" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="56" y="292" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">23.x</text>
+<text x="56" y="311" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 17 / Tomcat 10.1 (jakarta)</text>
+<text x="56" y="327" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr: Search Services 2.0</text>
+<rect x="40" y="354" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="56" y="378" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">7.x  (latest patch 7.4.2)</text>
+<text x="56" y="397" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 17 / Tomcat 9 (javax)</text>
+<text x="56" y="413" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr: Search Services 2.0</text>
+<rect x="40" y="440" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="56" y="464" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">6.x</text>
+<text x="56" y="483" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 11 / Tomcat 8.5 (javax)</text>
+<text x="56" y="499" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr: Search Services 1.x</text>
+<rect x="40" y="545" width="300" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="6 5" filter="url(#shadow)"/>
+<text x="56" y="569" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">5.2</text>
+<text x="56" y="588" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 8 / Tomcat 7</text>
+<text x="56" y="604" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr 4 or Search Services 1.x</text>
+<rect x="580" y="545" width="230" height="66" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="6 5" filter="url(#shadow)"/>
+<text x="596" y="569" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#1F2933" text-anchor="start">7.4.2</text>
+<text x="596" y="588" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Java 17 / Tomcat 9</text>
+<text x="596" y="604" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5F6B7A" text-anchor="start">Start once: schema upgrade</text>
+<rect x="880" y="200" width="330" height="250" rx="14" fill="#E8F1FD" stroke="#2F6FDE" stroke-width="2" filter="url(#shadow)"/>
+<text x="904" y="244" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#2F6FDE" text-anchor="start">26.2</text>
+<text x="904" y="272" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1F2933" text-anchor="start">Java 21 / Tomcat 11 (jakarta)</text>
+<text x="904" y="294" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1F2933" text-anchor="start">Alfresco Search Community</text>
+<text x="904" y="313" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">OpenSearch or Elasticsearch</text>
+<text x="904" y="332" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">Solr is no longer supported</text>
+<line x1="904" y1="352" x2="1186" y2="352" stroke="#2F6FDE" stroke-opacity="0.25"/>
+<text x="904" y="376" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1F5BC6" text-anchor="start">On arrival:</text>
+<text x="904" y="396" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1F2933" text-anchor="start">seed the indexer cursor at the first</text>
+<text x="904" y="414" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1F2933" text-anchor="start">transaction, maxGapAge=0, maxWindow=7d</text>
+<rect x="477.8" y="177.5" width="256.4" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="490.8" cy="189.5" r="4" fill="#1F5BC6"/>
+<text x="612.0" y="194.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">1 step, OpenSearch initial index</text>
+<rect x="477.8" y="238.0" width="256.4" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="490.8" cy="250.0" r="4" fill="#1F5BC6"/>
+<text x="612.0" y="254.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">1 step, OpenSearch initial index</text>
+<rect x="477.8" y="298.5" width="256.4" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="490.8" cy="310.5" r="4" fill="#1F5BC6"/>
+<text x="612.0" y="315.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">1 step, OpenSearch initial index</text>
+<rect x="477.8" y="359.0" width="256.4" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="490.8" cy="371.0" r="4" fill="#1F5BC6"/>
+<text x="612.0" y="375.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">1 step, OpenSearch initial index</text>
+<rect x="477.8" y="419.5" width="256.4" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="490.8" cy="431.5" r="4" fill="#1F5BC6"/>
+<text x="612.0" y="436.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">1 step, OpenSearch initial index</text>
+<rect x="399.8" y="566.0" width="112.4" height="24" rx="12" fill="#FDEBDD" stroke="#C2570C" stroke-width="1.2"/>
+<circle cx="412.8" cy="578.0" r="4" fill="#C2570C"/>
+<text x="462.0" y="582.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#C2570C" text-anchor="middle">Solr reindex</text>
+<rect x="741.6" y="489.5" width="198.8" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="754.6" cy="501.5" r="4" fill="#1F5BC6"/>
+<text x="847.0" y="506.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">OpenSearch initial index</text>
+<line x1="40" y1="650" x2="90" y2="650" stroke="#9AA5B1" stroke-width="2.2"/>
+<text x="100" y="654.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">Rehearsed on Docker</text>
+<line x1="300" y1="650" x2="350" y2="650" stroke="#9AA5B1" stroke-width="2.2" stroke-dasharray="7 6"/>
+<text x="360" y="654.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">Documented, not rehearsed</text>
+<rect x="40.0" y="670" width="112.4" height="24" rx="12" fill="#FDEBDD" stroke="#C2570C" stroke-width="1.2"/>
+<circle cx="53.0" cy="682" r="4" fill="#C2570C"/>
+<text x="102.2" y="686.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#C2570C" text-anchor="middle">Solr reindex</text>
+<text x="166" y="686.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">Only if you keep Solr at the 7.4.2 stop (Solr 4 to Search Services).</text>
+<rect x="40.0" y="702" width="198.8" height="24" rx="12" fill="#E3EDFC" stroke="#1F5BC6" stroke-width="1.2"/>
+<circle cx="53.0" cy="714" r="4" fill="#1F5BC6"/>
+<text x="145.4" y="718.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1F5BC6" text-anchor="middle">OpenSearch initial index</text>
+<text x="253" y="718.5" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F6B7A" text-anchor="start">Required for every path into 26.2. Old content is not indexed by default.</text>
+</svg>

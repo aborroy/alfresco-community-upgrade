@@ -4,6 +4,8 @@ Tools to rehearse an upgrade of Alfresco Community Edition to 26.2 on Docker, wi
 
 The upgrade path and every manual step are explained in [docs/upgrade-path-26.2.md](docs/upgrade-path-26.2.md).
 
+![Upgrade paths to Alfresco Community 26.2](docs/img/upgrade-paths.svg)
+
 ## Tested upgrade paths
 
 Each source repository was created from data seeded on 6.1.2 and upgraded with the steps in the guide. Every row passed all checks: users, sites, version history, comments, tags, properties, content checksums, new upload, PDF rendition, and full-text search on old and new content.
